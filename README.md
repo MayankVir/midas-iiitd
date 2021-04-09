@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Get the live project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is hosted on netlify [HERE](https://midas-iiitd.netlify.app).
 
 ## Available Scripts
 
