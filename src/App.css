@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+* {
+  margin : 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box_content {
+  width: 100%;
+  height: 90vh;
+  background-image: radial-gradient(closest-corner at 60% 25%, #533654 20%, #051723 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* position: absolute; */
+}
+
+.yo {
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  background-color: burlywood;
+  left: -20%;
+  /* width: 500px;
+  height: 450px; */
+  height: 65vh;
+  width: 35vw;
+  background-image: linear-gradient(#B77C9A, #3C66CE );
+  border-radius: 43% 45% 40% 42%;
+  animation: animate 6s linear infinite;
+  opacity: 0.8;
+}
+
+.main_content {
+  width: 400px;
+  height: 400px;
+  display: absolute;
+  overflow: hidden;
+}
+
+@keyframes animate {
+  /* 0%,100% { */
+    0% { transform: rotate(0deg);}
+    50% { transform: rotate(180deg);}
+    100% { transform: rotate(360deg);}
+  /* }
+  25% {
+    border-radius: 200% 225% 225% 250% / 320% 350% 300% 450%;
+  } 
+  50% {
+    border-radius: 125% 350% 300% 150% / 200% 125% 225% 350%;
+  }
+  75% {
+    border-radius: 400% 125% 225% 200% / 200% 400% 300% 350%;
+  } */
+}
+
+.main_page_img {
+  padding-top: 10px;
+  margin-left: 13%; 
+}
+
+.main_content_heading {
+  font-size: 3.5rem;
+  position: absolute;
+  padding: 70px 0px 0px 40px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.lorem_ipsum {
+  color: white;
+  margin: 225px 0 0 40px;
+  font-size: 0.8rem;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.colleague_img {
+  height: 65vh;
+  width: 45vw;
+  border-radius: 15px 100px;
+}
+
+.login_button {
+  padding: 10px;
+  margin: 300px 0px 0px 40px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 6%;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.login_button:hover {
+  color: #4F5CA0;
+  background-color: white;
+  border: 1px solid #4F5CA0;
+}
+
+.youtube_link {
+  display: flex;
+  position: absolute;
+  margin: 300px 0px 0px 180px;
+}
+
+.youtube {
+  height: 35px;
+  width: 35px;
+}
+
+.youtube_heading {
+  color: white;
+  margin: 8px;
+  font-size: 0.9rem;
+}
+
+.youtube_router {
+  text-decoration: none;
+  display: flex;
+}
+
+.line {
+  background-color: black;
+  /* margin: 20px; */
+  height: 50%;
+  width: 100%;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main_content_heading {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .lorem_ipsum {
+    margin: 200px 0 0 40px;
+  }
+  
+  .login_button {
+    margin: 250px 0px 0px 40px;
+    font-size: 0.6rem;
+  }
+
+  .youtube_heading {
+    font-size: 0.7rem;
+  }
+
+  .youtube_link {
+    margin: 250px 0px 0px 160px;
+  }
+
+  .youtube {
+    height: 30px;
+    width: 30px;
+  }
+
+  .blob {
+    left: -10%;
+  }
+  
+}
+
+@media only screen and (max-width: 960px) {
+  
+  .App {
+    width: 100vw;
   }
 }

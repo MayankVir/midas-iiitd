@@ -1,23 +1,59 @@
-import logo from './logo.svg';
+import React from 'react';
+import Navbar from './components/Navbar'
+import Authentication from './components/Authentication'
+import mainImg from "../src/assets/1.jpg"
+import { BrowserRouter as Router} from 'react-router-dom'
 import './App.css';
+import { useStateValue } from './StateProvider';
 
 function App() {
+
+  const [{user}, dispatch] = useStateValue();
+
+  const signInStyle = {
+	  color: "white",
+	  margin: "200px 500px"
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+	<div className="App">
+
+		{(!user ? (
+			<>
+				<div className = "box_content">
+					{/* NAVBAR */}
+					<Router>
+						<Navbar />
+					</Router>
+
+					{/* Main Content */}
+
+					<div className="content">
+						<div className="main_page_img">
+							<img className = "colleague_img"src = {mainImg} alt="Main Page" />
+						</div>
+
+						<div className="yo">
+							<Router>
+								<Authentication />
+							</Router>
+						</div>
+					</div>
+				</div> 
+			</>
+		) 
+		:
+		(
+			<>
+			<div className="box_content">
+				<Router>
+					<Navbar />
+				</Router>
+				<h1 style={signInStyle}> You are Signed In </h1>
+			</div>
+			</>
+		)
+		)}
     </div>
   );
 }
